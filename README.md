@@ -1,5 +1,5 @@
 # Mass-Remove-Steam-Games
-Import in tamper/grease/violent monkey
+Import in tamper/grease/violent monkey and
 Head to https://store.steampowered.com/account/licenses/.
 
 ```
