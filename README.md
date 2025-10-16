@@ -46,7 +46,7 @@ for (let row of rows){
     }
 }
 ```
-To remove items between date range, if you want to remove from a single day keep both dates the same, Uncomment for line 23 and 32 for just removing demos in the date range
+To remove items between date range, if you want to remove from a single day keep both dates the same, Uncomment for line 21 and 29 for just removing demos in the date range
 ```js
 var appIds = [];
 var rows = document.getElementsByClassName("account_table")[0].rows;
@@ -69,13 +69,13 @@ for (let row of rows) {
     if (licenseDate >= startDate && licenseDate <= endDate) {
         // Extract the packageId for licenses within the date range
         // if (/\b(?:trailer|teaser|demo|cinematic|pegi|esrb)\b/i.test(cell.textContent)) {
-        let packageId = /javascript:\s*RemoveFreeLicense\s*\(\s*(\d+)/.exec(cell.innerHTML);
+            let packageId = /javascript:\s*RemoveFreeLicense\s*\(\s*(\d+)/.exec(cell.innerHTML);
 
-            if (packageId !== null) {
-                i++;
-                console.log(`[${i}] Removing: ${packageId[1]} - ${cell.innerHTML.split("</div>")[1].trim()} (Date: ${licenseDateStr})`);
-                if (!appIds.includes(packageId[1])) appIds.push(packageId[1]);
-                }
+                if (packageId !== null) {
+                    i++;
+                    console.log(`[${i}] Removing: ${packageId[1]} - ${cell.innerHTML.split("</div>")[1].trim()} (Date: ${licenseDateStr})`);
+                    if (!appIds.includes(packageId[1])) appIds.push(packageId[1]);
+                    }
         // }
     }
 }
